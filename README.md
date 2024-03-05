@@ -3,7 +3,7 @@
 My template for [Create React App](https://create-react-app.dev/docs/custom-templates/).
 
 ```
-npx create-react-app foo --template mind-decay-ts
+npx create-react-app --template mind-decay-ts
 ```
 
 ## What it adds on top of default CRA:
