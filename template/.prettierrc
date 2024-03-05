@@ -1,0 +1,22 @@
+{
+  "tabWidth": 2,
+  "printWidth": 120,
+  "semi": true,
+  "arrowParens": "always",
+  "bracketSpacing": true,
+  "singleQuote": true,
+  "overrides": [
+    {
+      "files": "*.css",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.html",
+      "options": {
+        "printWidth": 160
+      }
+    }
+  ]
+}

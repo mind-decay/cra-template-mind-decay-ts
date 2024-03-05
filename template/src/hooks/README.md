@@ -1,0 +1,3 @@
+# Hooks Folder
+
+You can use this folder to store your shared custom hooks
