@@ -1,6 +1,6 @@
 {
   "name": "cra-template-mind-decay-ts",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Template for Create-React-App with custom folder structure, lintersand styled-components",
   "keywords": [
     "CRA",
