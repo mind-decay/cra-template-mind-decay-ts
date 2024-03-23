@@ -12,5 +12,9 @@
     "TypeScript"
   ],
   "author": "mind-decay",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mind-decay/cra-template-mind-decay-ts"
+  },
   "license": "ISC"
 }
