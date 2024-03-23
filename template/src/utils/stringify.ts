@@ -1,6 +1,7 @@
-import { urlParams } from 'types/api';
+import { urlParams } from 'types/api/api';
+import { Nullable } from 'types/helpers';
 
-export const stringify = (obj: urlParams | null) => {
+export const stringify = (obj: Nullable<urlParams>) => {
   if (!obj || Object.keys(obj).length === 0) {
     return '';
   }
