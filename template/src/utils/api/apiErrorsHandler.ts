@@ -1,4 +1,4 @@
-import { isErrorCodeType } from 'types/errors';
+import { isErrorCodeType } from 'types/api/errors';
 
 export const apiErrorsHandler = (errCode: unknown) => {
   const err = Number(errCode);

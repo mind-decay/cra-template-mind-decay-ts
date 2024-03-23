@@ -1,25 +1,34 @@
 import { useState } from 'react';
-import { ErrorType, isErrorType } from 'types/api';
+import { ErrorType, isErrorType } from 'types/api/api';
+import { Nullable } from 'types/helpers';
+
+type useApiOptions<T> = {
+  handleSuccess?: (res: T) => void;
+  handleError?: (err: ErrorType) => void;
+};
 
 export const useApi = <T, Args extends unknown[] = unknown[]>(
-  request: (...args: Args) => Promise<T>
-): [typeof isLoading, typeof request, typeof error | null] => {
+  request: (...args: Args) => Promise<T>,
+  { handleSuccess, handleError }: useApiOptions<T> = {}
+): [typeof isLoading, (...args: Args) => Promise<T | undefined>, Nullable<typeof error>] => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [error, setError] = useState<ErrorType | null>(null);
+  const [error, setError] = useState<Nullable<ErrorType>>(null);
 
-  const performRequest = async (...args: Args): Promise<T> => {
+  const performRequest = async (...args: Args) => {
+    setIsLoading(true);
+
     try {
       const response = await request(...args);
-      setIsLoading(true);
+
+      handleSuccess?.(response);
       setError(null);
 
       return response;
     } catch (err) {
       if (isErrorType(err)) {
         setError(err);
+        handleError?.(err);
       }
-
-      throw err;
     } finally {
       setIsLoading(false);
     }
