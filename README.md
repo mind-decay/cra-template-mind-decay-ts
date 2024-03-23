@@ -22,4 +22,6 @@ npx create-react-app --template mind-decay-ts
 - /layouts for shared layouts and their corresponding components
 - /pages for pages composed of shared components and layouts
 - prettier, eslint, editorconfig
+- simple fetch apiClient
+- useApi, useMedia and useScrollToAnchor hooks
 - deletes useless CRA files
